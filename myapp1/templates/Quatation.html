@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <title>Company_Name</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark mt-2 shadow-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/proview">
+            <img src="{% static 'images/admin_logo.png' %}" alt="Logo" style="width:40px;" class="rounded-pill">
+          </a>
+          <a class="navbar-brand">
+            <h3 style="color: Black;"><b>Quatation</b></h3>
+          </a>          
+          <a class="btn" href="/logout">
+            Logout
+          </a>
+        </div>
+    </nav>
+    <form id="quat_insert" method="POST" enctype="multipart/form-data" action="/quat1">
+       {% csrf_token %}
+      <div class="container mt-5 mb-5">
+        <div class="row bg-light rounded">
+          <div class="col-lg-4">
+            <label for="price">Product ID</label>
+            <input class="form-control" type="text" name="proid" id="proid" value="{{res.proid}}" readonly><br><br>
+            <label for="price">Product Name</label>
+            <input class="form-control" type="text" name="proname" id="proname" value="{{res.proname}}" readonly><br><br>
+          </div>
+          <div class="col-lg-4">            
+            <label for="price">Quat_Price</label>
+            <input class="form-control" type="text" name="qpri" id="qpri" placeholder="Enter your Qutatio Price" value="">
+            <center><p><b>Price Range=  {{res.proprice}} per piece</b></p><br></center>
+            <label for="date">Delivery Date</label>
+            <input class="form-control" type="date" name="ddate" id="ddate"placeholder="DD MM YYYY"><br>
+          </div>
+            <div class="col-lg-4">
+            <label for="com_name">Company Name</label>
+            <input class="form-control" type="text" name="comname" id="comname" value="{{res1.comname}}" readonly><br><br>
+            <label for="price">Contact Number</label>
+            <input class="form-control" type="text" name="comob" id="comob" value="{{res1.commob}}" readonly><br>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5">
+  
+          </div>
+          <div class="col-lg-2">
+              <button type="submit"class="btn form-control btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align: center;"><h2>
+
+      </h2></div>
+    </form>
+</body>
+</html>

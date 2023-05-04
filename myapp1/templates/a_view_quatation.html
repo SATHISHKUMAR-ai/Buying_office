@@ -1,0 +1,37 @@
+{% extends "admin.html"%}
+{% load static %}
+<from>
+  <div class="container">
+    <div class="row">
+      {% block bodycontent %}
+      <h3 style="text-align: right;" class="mt-3"><b>View Bids</b></h3>
+      <div class="col-lg-11 m-5 p-2 rounded">        
+        <table class="table table-bordered table-hover shadow-lg rounded">
+          <tr> 
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Company Name</th>
+              <th>Company Mobile No</th>
+              <th>Product Price</th>
+              <th>Delivery Date</th>
+              <th>Status Update</th>
+
+          {% for getdata in quatv %}
+          
+          <tr>
+            <td> {{ getdata.prod_id}} </td>
+            <td> {{ getdata.prod_name}} </td>
+            <td> {{ getdata.com_name}} </td>
+            <td> {{ getdata.com_mob}} </td>
+            <td> {{ getdata.price}} </td>
+            <td> {{ getdata.delev_date}} </td>
+            <td> <a href="/activeorder/{{ getdata.prod_id }}" class="btn btn-light">Select </a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>      
+      {% endblock %}
+    </div>
+  </div>
+{{ res }}
+</form>

@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Company_Name</title>
+<!-- Navbar --> 
+<nav class="navbar navbar-expand-lg navbar-secondary bg-white fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation" >
+              <i class="fas fa-bars"></i> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01"> 
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 "> 
+        <li class="nav-item active">
+          <a class="nav-link" href="/index"><img src="{% static 'images/logo1.jpg' %}" height="30" weight="100"></a>
+        </li>
+        <li class="nav-item active"> <a class="nav-link" href="/index">Home</a> </li> 
+        <li class="nav-item"> <a class="nav-link" href="/index">Prodect</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/index">About</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/index">Contact</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/prelr">LogIn</a> </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</head>  <hr>
+<!-- Navbar -->
+<body>
+  {{ res }}
+  <div class="container">
+    <form id="insert" method="POST" enctype="multipart/form-data" action="/regcom" onblur="repass()"> {% csrf_token %}
+      <div class="row">
+        <div class="col-lg-1">
+
+        </div>        
+        <div class="col-lg-5 p-5 mb-5 mt-5 shadow-lg rounded">
+          <h3>Registration</h3>
+          <label for="name">Company Name :</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="please enter your name" required><br>
+          <label for="gst">GST NO :</label>
+          <input type="text" class="form-control" id="gst" name="gst" placeholder="please enter your name" required><br>
+          <label for="mob">Mobile No :</label>
+          <input type="text" class="form-control" id="mobile" name="mobile" placeholder="please enter your mobile number" required><br>
+          <label for="email">E_Mail ID :</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="please enter your email" required><br>
+        </div>       
+        <div class="col-lg-5 p-5 mb-5 mt-5 shadow-lg rounded">
+          <label for="adres">Address :</label>
+          <textarea row="50" class="form-control" id="adres" name="adres" placeholder="please enter your address" required></textarea><br>
+          <label for="ps">Password</label>
+          <input type="password" class="form-control" id="ps" name="ps" placeholder="please enter your password" onblur="repass()" required><br>
+          <label for="re-ps">Re-Enter Password</label>
+          <input type="password" class="form-control" id="reps" name="reps" placeholder="please re-enter your password" onblur="repass()" required><br>
+          <p id="to"></p>
+          <label for="pic">GST IN COPY :</label>
+          <input type="file" class="form-control" id="dp" name="dp" placeholder="choose yor picture"><br>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-5">
+
+        </div>
+        <div class="col-lg-2">
+            <button type="submit"class="btn form-control btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script>  
+  function repass(){
+          p=document.getElementById('ps').value;
+          rp=document.getElementById('reps').value;
+
+          if(p!=rp){
+            res="Both Passwords are Not Same"
+            res1=document.getElementById("to").innerHTML=res
+          }
+          else{
+            res="Both Passwords are Same"
+            res1=document.getElementById("to").innerHTML=res
+          }
+        }
+</script>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white mt-5">
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fa fa-facebook-f"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fa fa-twitter"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" ><i class="fa fa-google"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" ><i class="fa fa-instagram"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" ><i class="fa fa-linkedin"></i></a>
+    </section>
+    <!-- Section: Social media -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="#">Bying office</a>
+    </div>
+    <!-- Copyright -->
+  </div>
+</footer>
+<!-- Footer -->
+</html>

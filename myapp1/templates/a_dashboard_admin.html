@@ -1,0 +1,84 @@
+{% extends "admin.html"%}
+{% load static %}
+<div class="container mt-5 p-5">
+    <div class="row mt-5 p-5"> 
+        {% block bodycontent %}
+        <div class="col-lg-3">
+            <div class="card mt-5 shadow-lg">
+                <img class="card-img-top" src="{% static 'images/bg9.jpg' %}" alt="Card image">
+                <div class="card-img-overlay">
+                    <center>
+                        <h4 class="card-title text-primary mt-3 p-3 shadow-lg">Client</h4>
+                        <p class="card-text text-primary"><h1><b class="shadow-lg text-primary">{{cou}}</b></h1></p>
+                    </center>
+                </div>
+            </div>
+            <div class="card mt-5 shadow-lg">
+                <img class="card-img-top" src="{% static 'images/bg9.jpg' %}" alt="Card image">
+                <div class="card-img-overlay">
+                    <center>
+                        <h4 class="card-title text-primary mt-3 p-3 shadow-lg">Product</h4>
+                        <p class="card-text text-primary"><h1><b class="shadow-lg text-primary text-shadow-lg">{{cou1}}</b></h1></p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card mt-5 shadow-lg">
+                <img class="card-img-top" src="{% static 'images/bg9.jpg' %}" alt="Card image">
+                <div class="card-img-overlay">
+                    <center>
+                        <h4 class="card-title text-primary mt-3 p-3 shadow-lg">Qutation</h4>
+                        <p class="card-text text-primary"><h1><b class="shadow-lg text-primary text-shadow-lg">{{cou2}}</b></h1></p>
+                    </center>
+                </div>
+            </div>
+            <div class="card mt-5 shadow-lg">
+                <img class="card-img-top" src="{% static 'images/bg9.jpg' %}" alt="Card image">
+                <div class="card-img-overlay">
+                    <center>
+                        <h4 class="card-title text-primary mt-3 p-3 shadow-lg">Active Orders</h4>
+                        <p class="card-text text-primary"><h1><b class="shadow-lg text-primary text-shadow-lg">{{cou3}}</b></h1></p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 mt-5 ">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+            <canvas id="myChart" style="width:150%;width:150%"></canvas><br>
+            <script>
+            var xValues = ["Client", "Quatation", "Product", "Activa Order"];
+            var yValues = ["{{cou}}","{{cou1}}","{{cou2}}","{{cou3}}"];
+            var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+            ];
+            document.write("\n\n\n");
+            new Chart("myChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues
+                    }]
+                },
+                
+            options: {
+                title: {
+                display: true,
+                text: "Analysis"
+                }
+            }
+            });
+            </script>
+
+        </div>
+    </div>
+
+    {% endblock %}
+</div>

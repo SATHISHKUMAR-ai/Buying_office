@@ -1,0 +1,56 @@
+{% extends "admin.html"%}
+{% load static %}
+<body>
+  <div class="container">
+    <div class="row">
+      {% block bodycontent %}
+      <form id="quat_insert" method="POST" enctype="multipart/form-data" action="/updatestatus">
+        {% csrf_token %}
+          <h3 style="text-align: right;" class="mt-3"><b>Bids Update</b></h3>
+          <div class="col-lg-7 p-1 m-5">      
+              {% csrf_token %}
+              <table class="table mt-5 p-5 table-light table-hover" style="border-radius: 23px;">
+                <input type="hidden" name="pid" value="{{ao.id}}">
+                <tr>
+                  <td> Product ID</td>
+                  <td><input type="text" name="uid" value="{{ ao.prod_id}}" readonly></td>
+                </tr>
+                <tr>
+                  <td>Prodect Name </td>
+                  <td><input type="text" name="upn" value="{{ ao.prod_name}}" readonly>  </td>
+                </tr>
+                <tr>
+                  <td>Company Name</td>
+                  <td> <input type="text" name="ucn" value="{{ ao.com_name}}" readonly> </td>
+                </tr>
+                <tr>
+                  <td> Company Mobile No </td>
+                  <td> <input type="text" name="umn" value="{{ ao.com_mob}}" readonly> </td>
+                </tr>
+                <tr>
+                  <td> Product Price </td>
+                  <td> <input type="text" name="up" value="{{ ao.price}}" readonly> </td>
+                </tr>
+                <tr>
+                  <td> Delivery Date </td>
+                  <td> <input type="text" name="udd" value="{{ ao.delev_date|date:'Y-m-d'}}" readonly>  </td>
+                </tr>
+                <tr>
+                  <td>Status</td>
+                  <td>
+                    <select class="form-select form-control" id="us1" name="us">
+                      <option>Pending</option>
+                      <option>Accept</option>
+                      <option>Reject</option>
+                    </select></td>
+                </tr>
+              </table><center>
+              <div class="col-lg-2">
+                <button type="submit"class="btn form-control btn-primary">Submit</button>
+              </div></center>
+            </div>
+        {% endblock %}
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,90 @@
+{% extends "admin.html" %}
+{% load static %}
+<body>
+{% block bodycontent %}
+<form id="pro_insert" method="POST" enctype="multipart/form-data" action="/prodetails">{% csrf_token %}
+<h3 style="text-align: right;" class="mt-3"><b>Add Product</b></h3>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <label for="proid">Product ID :</label>
+            <input type="text" class="form-control" id="pid" name="pid" placeholder="please enter product ID" required><br>
+            <label for="proname">Product Name :</label>
+            <input type="text" class="form-control" id="pname" name="pname" placeholder="please enter product Name" required><br>
+            <label for="proname">Product Quantity :</label>
+            <input type="text" class="form-control" id="pquant" name="pquant" placeholder="please enter product Quantity" required><br>
+        </div>
+        <div class="col-lg-4">
+            <label for="catag">Catagory :</label>
+            <select class="form-select" id="catag" name="prot_catag" required>
+                <option>-----</option>
+                <option>Kids</option>
+                <option>Mens</option>
+                <option>Womens</option>
+            </select><br>
+            <label for="protype">Style :</label>
+            <select class="form-select" id="catag" name="prot_type" required>
+                <option>-----</option>
+                <option>T-Shirt (POLO)</option>
+                <option>T-Shirt (Round Nect)</option>
+                <option>Pant</option>
+                <option>Trauser's</option>
+                <option>Combo</option>
+            </select><br>
+            <label for="date">Bid Start Date</label>
+            <input class="form-control" type="date" name="bsd" id="bsd"placeholder="DD MM YYYY"><br>
+            <label for="date">Bid End Date</label>
+            <input class="date form-control" type="date" name="bed" id="bed"placeholder="DD MM YYYY"><br>
+            <button class="btn form-control btn-primary" href="">Submit</a></button><br><hr>            
+        </div>
+        <div class="col-lg-4">
+            <label for="Price">Biting Price :</label>
+            <input type="text" class="form-control" id="pprice" name="pprice" placeholder="please enter product Price" required><br>
+            <label for="Discription">Discription :</label>
+            <textarea row="50" class="form-control" id="pdis" name="pdis" placeholder="please enter product Discription" required></textarea>
+            <label for="Image">Image :</label>
+            <input type="file" class="form-control" id="pp" name="pp" placeholder="choose your picture" required><br>
+        </div>
+    </div>
+</div>
+</form>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var countDownDate = getElementById("bsd");
+var x = setInterval(function() {
+var now = new Date().getTime();
+var distance = countDownDate - now;
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.getElementById("demo").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+
+{% endblock %}        
+{{ result }}
+</body>    
+</html>
+   

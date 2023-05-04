@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/navbar.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Company_Name</title>
+<!-- Navbar --> 
+<nav class="navbar navbar-expand-lg navbar-secondary bg-white fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation" >
+              <i class="fas fa-bars"></i> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01"> 
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 "> 
+        <li class="nav-item active">
+          <a class="nav-link" href="/index"><img src="{% static 'images/logo1.jpg' %}" height="30" weight="100"></a>
+        </li>
+        <li class="nav-item active"> <a class="nav-link" href="/index">Home</a> </li> 
+        <li class="nav-item"> <a class="nav-link" href="#product">Product</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#about">About</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/prelr">LogIn</a> </li>
+      </ul>
+    </div>
+  </div>
+  <button class="btn btn-light" href="logout">Logout</button>
+</nav>
+</head>  <hr>
+<!-- Navbar -->
+  <body style="background-color: white">
+    <div id="home" class="container mt-5 p-5">
+    <!--home-->
+      <!-- Carousel wrapper -->
+      <div class="carousel slide carousel-fade">
+          
+        <!-- Indicators -->
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-mdb-target="#home" data-mdb-slide-to="1" 
+           aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-mdb-target="#home" data-mdb-slide-to="2"
+            aria-label="Slide 2" ></button>
+          <button type="button" data-mdb-target="#home" data-mdb-slide-to="3"
+            aria-label="Slide 3" ></button>
+        </div> -->
+        <!-- Inner -->
+        <div class="carousel-inner">
+          <!-- Single item -->
+          <div class="carousel-item active">
+            <img src="{% static 'images/h1.jpg' %}" class="d-block w-100 h-80" alt="Sunset Over the City">
+            <div class="text-block text-center">
+              <h5>Company</h5>
+                <p> We have a first class client side for cotton to cloth Process </p>
+            </div>
+          </div> 
+          <!-- Single item -->
+          <div class="carousel-item">
+            <img src="{% static 'images/h2.jpg' %}" class="d-block w-100 h-80" alt="Canyon at Nigh">
+            <div class="carousel-caption text-block">
+              <h5>Second slide label</h5>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </div>
+          </div> 
+          <!-- Single item -->
+          <div class="carousel-item">
+            <img
+              src="{% static 'images/h3.jpg' %}" class="d-block w-100 h-80" alt="Cliff Above a Stormy Sea">
+            <div class="carousel-caption text-block">
+              <h5>Third slide label</h5>
+              <p> Praesent commodo cursus magna, vel scelerisque nisl consectetur. </p>
+            </div>
+          </div>
+        </div>
+        <!-- Inner --> 
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-mdb-target="#home" 
+        data-mdb-slide="prev" >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#home"
+          data-mdb-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div><hr>
+    <!-- Carousel wrapper -->
+    <!--home-->
+    <!--Product-->
+    <div id="product" class="container mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+      <div class="row">
+        <div class="col-lg-4 ">
+          <div class="card shadow-lg" style="width:250px;align-items: center;">
+            <img class="card-img-top" src="{% static 'images/k5.jpeg' %}" alt="Card image" style="width:90%">
+            <div class="card-body">
+              <h4 class="card-title">Kids</h4>
+              <p class="card-text">Click Here for More Kids Product</p>
+              <a href="/proview" class="btn btn-primary">Products</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card shadow-lg" style="width:250px">
+            <img class="card-img-top" src="{% static 'images/m1.jpeg' %}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">Mens</h4>
+              <p class="card-text">Click Here for More Mens Product</p>
+              <a href="/proview" class="btn btn-primary">Products</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card shadow-lg" style="width:250px">
+            <img class="card-img-top" src="{% static 'images/w1.jpg' %}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">Womens</h4>
+              <p class="card-text">Click Here for More Womens Product</p>
+              <a href="/proview" class="btn btn-primary">Products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <br><hr>
+    <!--Product-->
+
+    <!--About-->
+    <div class="container mt-5" id="about">
+
+      <div class="row shadow-lg p-3 mb-5 rounded slide-in-right">
+        <div class="col-lg-6 rounded">
+          <img class="image shadow-lg p-3 mb-5 bg-white rounded" src="{% static 'images/h2.jpg' %}" width="100%" >
+        </div>
+        <div class="col-lg-6 text-center">
+          <h3>Measurements</h3>
+          <p>We would like to produce all size of as per you want.Below mension sizes,
+            <br>XS<br>S<br>M<br>L<br>XL<br>XXL<br>
+          </p>
+        </div>
+      </div><hr>
+
+      <div class="row shadow-lg p-3 mb-5 rounded slide-in-right">
+        <div class="col-lg-6 text-center">
+          <h3>Heading</h3>
+          <p>Discription</p>
+        </div>
+        <div class="col-lg-6 rounded">
+          <img src="{% static 'images/h3.jpg' %}" class="image shadow-lg p-3 mb-5 bg-white rounded" width="100%">
+        </div>
+      </div>
+      </div><hr>
+
+      <div class="row shadow-lg p-3 mb-5 rounded slide-in-right">
+        <div class="col-lg-6 rounded">
+          <img src="{% static 'images/h5.jpg' %}" class="image shadow-lg p-3 mb-5 bg-white rounded" width="100%">
+        </div>
+        <div class="col-lg-6 text-center">
+          <h3>Heading</h3>
+          <p>Discription</p>
+        </div>
+      </div><hr>
+      
+      <div class="row shadow-lg p-3 mb-5 rounded slide-in-right">
+        <div class="col-lg-6 text-center">
+          <h3>Heading</h3>
+          <p>Discription</p>
+        </div>
+        <div class="col-lg-6 rounded">
+          <img src="{% static 'images/h6.jpg' %}" class="image shadow-lg p-3 mb-5 bg-white rounded" width="100%">
+        </div>
+      </div>
+      </div><hr>
+
+    </div>
+    <!--About-->
+    <!--Contact-->
+    <div id="contact" class="container"> 
+          <div class="row">
+            <div class="col-lg p-3 align-center shadow-lg rounded">.
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.2628624599142!2d77.348173!3d11.0937763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9078028c4135d%3A0x1887f84d3b32d274!2sKICE%20Research%20Project%20Center%20Tirupur!5e0!3m2!1sen!2sin!4v1671173638520!5m2!1sen!2sin" 
+            width="100%" height="480" style="border:2;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%"></iframe>
+            </div>
+          </div>
+          <div class="row p-5">
+            <div class="col-lg-4 p-3 text-white rounded shadow-lg" style="background-color:#A5C3F1;">
+              <h3> <u>Address</u></h3>
+              <p><h4>Arrow Studio's</h4>Neruperichal<br>Vavipalayam<br>Tirupur<br><br>
+                <img src="{% static 'images/s13.png' %}" style="height:50px;width: 40px;">+91-98765-43210</img><br><br>
+                <img src="{% static 'images/s14.png' %}" style="height:40px;width: 40px;">arroestudios@gmail.com</img>
+              </p>
+            </div>
+            <div class="col-lg-8 shadow-lg rounded p-3">
+              <form method="POST" action="{{un}}">
+                {% csrf_token %}
+                <div class="form-control">
+                  <label for="Name">Name:</label>
+                  <input type="text" class="form-control" name="name" id="name"><br>
+                
+                  <label for="email">Email:</label>
+                  <input type="text" class="form-control" name="email" id="email"><br>
+                
+                  <label for="Mobile">Mobile No:</label>
+                  <input type="text" class="form-control" name="mob" id="mob"><br>
+
+                  <label for="messege">Messege:</label>
+                  <textarea row="50" class="form-control" name="msg" id="msg">
+
+                </textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+    <!--Contact-->
+<!-- Footer -->
+<footer class="bg-secondary text-center text-white mt-5">
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fa fa-facebook-f"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fa fa-twitter"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" ><i class="fa fa-google"></i></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#" role="button" ><i class="fa fa-instagram"></i></a>
+    </section>
+    <!-- Section: Social media -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="#">Bying office</a>
+    </div>
+    <!-- Copyright -->
+  </div>
+</footer>
+<!-- Footer -->
+</html>

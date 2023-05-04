@@ -1,0 +1,37 @@
+{% extends "admin.html" %}
+{% load static %}
+<body>
+  <div class="container ">
+    <div class="row">
+      {% block bodycontent %}
+      <h3 style="text-align: right;" class="mt-3"><b>View Client Details</b></h3>
+      <div class="col-lg-12">
+        <table class="table border-radius mt-5 p-5 table-hover shadow-lg" style="border-radius: 23px;">
+          <tr> 
+              <th>Company Name</th>
+              <th>GST </th>
+              <th>Mobile</th>
+              <th>Email </th>
+              <th>Address </th>
+              <th>PassWord </th>
+              <th>Re-PassWord </th>
+              <th>Gst-Copy </th>
+          </tr>
+          {% for getdata in comp %}
+          <tr>
+              <td> {{ getdata.comname}} </td>
+              <td> {{ getdata.comgstno}} </td>
+              <td> {{ getdata.commob}} </td>
+              <td> {{ getdata.comemail}} </td>
+              <td> {{ getdata.comaddress}} </td>
+              <td> {{ getdata.compassword}} </td>
+              <td> {{ getdata.comrepassword}} </td>
+              <td> <img src="{{ getdata.comgstcopy.url }}" height="100" width="100"> </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</body>

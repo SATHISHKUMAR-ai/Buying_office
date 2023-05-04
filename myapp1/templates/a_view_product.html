@@ -1,0 +1,41 @@
+{% extends "admin.html"%}
+{% load static %}
+<body>
+  <div class="container">    
+    <div class="row">      
+    {% block bodycontent %}
+    <h3 style="text-align: right;" class="mt-3"><b>View Product</b></h3>
+      <div class="col-lg-11 mb-3">
+        <table class="table table-hover mt-3 p-5 shadow-lg" style="border-radius: 23px;">
+          <tr> 
+                  <th>Product ID</th>
+                  <th>Product Name</th>
+                  <th>Prodcut Catagory </th>
+                  <th>Product Type</th>
+                  <th>Product Quantity</th>
+                  <th>Product Price </th>
+                  <th>Product Discription </th>
+                  <th>Product Image </th>
+          </tr>
+                {% for getdata in prod %}
+          <tr>
+                    <td> {{ getdata.proid}} </td>
+                    <td> {{ getdata.proname}} </td>
+                    <td> {{ getdata.procatag}} </td>
+                    <td> {{ getdata.protype}} </td>
+                    <td> {{ getdata.proquant}} </td>
+                    <td> {{ getdata.proprice}} </td>
+                    <td> {{ getdata.prodisc}} </td>
+                    <td> <img src="{{ getdata.propic.url }}" height="100" width="100"> </td>
+                    <td> <a href="/selprod1/{{ getdata.proid }}" class="btn btn-info">Select </a></td>
+                    <td> <a href="/prodelete/{{ getdata.proid }}" class="btn btn-danger">Delete </a></td>
+          </tr>
+                {% endfor %}
+        </table>
+      </div>
+    </div>    
+    {% endblock %}
+    
+    {{ result }}
+  </div>
+</body>
