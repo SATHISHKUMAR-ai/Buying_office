@@ -1,1 +1,15 @@
 # Buying_office_django
+
+![Screenshot (34)](https://user-images.githubusercontent.com/132100837/236606035-1400e119-f6ad-422f-816a-b1c27b6e0cd5.png)
+![Screenshot (36)](https://user-images.githubusercontent.com/132100837/236606046-752ee48c-a877-4d47-b192-83baf6db6d4c.png)
+![Screenshot (35)](https://user-images.githubusercontent.com/132100837/236606050-e02360ad-5642-4dc9-b79d-16687fb902fa.png)
+![Screenshot (37)](https://user-images.githubusercontent.com/132100837/236606071-15fa496a-c241-4bef-9408-00a0c9a01b0f.png)
+![Screenshot (38)](https://user-images.githubusercontent.com/132100837/236606076-daaf8d26-7018-4f99-9b98-2c896c38eb2c.png)
+![Screenshot (39)](https://user-images.githubusercontent.com/132100837/236606079-0749272b-86ec-48dd-b9a6-eff245d6b197.png)
+![Screenshot (40)](https://user-images.githubusercontent.com/132100837/236606089-0660c67f-7726-4d58-850d-57f2acef758e.png)
+![Screenshot (41)](https://user-images.githubusercontent.com/132100837/236606097-6b8483a2-3![Screenshot (42)](https://user-images.githubusercontent.com/132100837/236606100-ae095755-a353-44a6-a0e1-5b1ee565a2b4.png)
+d1f-48d1-948a-a36d3b2f7f93.png)
+![Screenshot (43)](https://user-images.githubusercontent.com/132100837/236606107-059b67bd-fc6c-4865-bf06-380438bf997d.png)
+![Screenshot (44)](https://user-images.githubusercontent.com/132100837/236606110-3cbd8824-aa2b-4ed8-86a7-5d50195f69a4.png)
+![Screenshot (45)](https://user-images.githubusercontent.com/132100837/236606113-219e7b68-5e76-4e2f-99ab-38704ecface7.png)
+![Screenshot (46)](https://user-images.githubusercontent.com/132100837/236606117-269013e0-d50f-4bfd-9a5f-1408389b0c1a.png)
